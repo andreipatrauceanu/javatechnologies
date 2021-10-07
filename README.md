@@ -10,5 +10,5 @@ Repository-ul pentru Tehnologii Java, **Patrauceanu Ionut-Andrei**, MISS1
 * Al doilea punct
   * am invocat servlet-ul din cadrul Python, cu ajutorul urllib. Am atasat un printscreen.
 * Al treilea punct
-  * am analizat performanta servlet-ului cu ajutorul Apache JMeter. Am atasat o serie de printscreen-uri. Concluzia: in cazul cresterii numarului de cereri adresate simultan servlet-ului si timpul mediu de raspuns creste. In cazul atingerii unui numar de 5000 de cereri adresate simultan, nu toate din acestea sunt tratate corect (ex. 14.24% erori, in cazul in care sync-ul este false si 1.86% erori, in cazul in care sync-ul este true). 
+  * am analizat performanta servlet-ului cu ajutorul Apache JMeter. Am atasat o serie de printscreen-uri. Concluzia: in cazul cresterii numarului de cereri adresate simultan servlet-ului si timpul mediu de raspuns creste. In cazul atingerii unui numar de 5000 de cereri adresate simultan, nu toate din acestea sunt tratate corect.
 
