@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:loadBundle basename="Messages" var="message"/>
+<h:head>
+    <title>#{message.title_course}</title>
+    <style>
+        .btn {
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Darker background on mouse-over */
+        .btn:hover {
+            background-color: RoyalBlue;
+        }
+    </style>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:outputLabel for="language" value="#{message.language}"/>
+            <h:selectOneMenu id="language" value="#{user.locale}" onchange="submit()"
+                             valueChangeListener="#{user.localeChanged}">
+                <f:selectItems value="#{user.countries}"/>
+            </h:selectOneMenu>
+        </h:panelGrid>
+    </h:form>
+    <br/>
+    <br/>
+    <h:form>
+        <h:outputLabel value="#{message.name}"/>
+        <br/>
+        <br/>
+        <input type="text" jsf:value="#{exam.name}"/>
+        <br/>
+        <br/>
+        <h:outputLabel value="#{message.starting_time}"/>
+        <br/>
+        <br/>
+        <input type="number" min="8" max="18" jsf:value="#{exam.starting_time}"/>
+        <br/>
+        <br/>
+        <h:outputLabel value="#{message.duration_in_hours}"/>
+        <br/>
+        <br/>
+        <input type="number" min="1" max="4" jsf:value="#{exam.duration_hours}"/>
+        <br/>
+        <br/>
+        <h:commandButton value="Insert" action="#{exam.add}"/>
+        <br/>
+        <br/>
+        <h:outputText value="#{exam.result}"/>
+        <br/>
+        <br/>
+    </h:form>
+    <br/>
+    <br/>
+    <h:button styleClass="btn" value="#{message.back}" outcome="welcome-page"/>
+</h:body>
+</html>

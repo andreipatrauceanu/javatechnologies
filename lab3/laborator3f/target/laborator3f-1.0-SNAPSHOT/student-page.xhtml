@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<f:loadBundle basename="Messages" var="message"/>
+<h:head>
+    <title>#{message.title_student}</title>
+    <style>
+        .btn {
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Darker background on mouse-over */
+        .btn:hover {
+            background-color: RoyalBlue;
+        }
+    </style>
+</h:head>
+    <h:body>
+        <h:form>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel for="language" value="#{message.language}"/>
+                    <h:selectOneMenu id="language" value="#{user.locale}" onchange="submit()"
+                                     valueChangeListener="#{user.localeChanged}">
+                        <f:selectItems value="#{user.countries}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+        </h:form>
+        <br/>
+        <br/>
+        <h:form>
+        <h:outputLabel value="#{message.name}"/>
+        <br/>
+        <br/>
+        <input type="text" jsf:value="#{student.name}"/>
+        <br/>
+        <br/>
+        <h:outputLabel value="#{message.comma_exam}"/>
+        <br/>
+        <br/>
+        <input type="text" jsf:value="#{student.exams}"/>
+        <br/>
+        <br/>
+        <h:commandButton value="Insert" action="#{student.add}"/>
+        </h:form>
+        <h3><h:outputText value="#{message.title_table}"/></h3>
+        <h:dataTable border="2" value="#{exams.examsList}" var="p">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                <h:outputText value="#{p.id}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{message.name}</f:facet>
+                <h:outputText value="#{p.name}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{message.starting_time}</f:facet>
+                <h:outputText value="#{p.starting_time}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{message.duration_in_hours}</f:facet>
+                <h:outputText value="#{p.duration_hours}"/>
+            </h:column>
+        </h:dataTable>
+        <br/>
+        <br/>
+        <h:outputText value="#{student.result}"/>
+        <br/>
+        <br/>
+        <h:button styleClass="btn" value="#{message.back}" outcome="welcome-page"/>
+    </h:body>
+</html>
