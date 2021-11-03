@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>#{message.title_student}</title>
+</h:head>
+<h:body>
+    <ui:composition template = "WEB-INF/decorators/dataView.xhtml">
+        <ui:define name = "dataViewContent">
+                <h3><h:outputText value="#{message.title_table}"/></h3>
+                <h:dataTable border="2" value="#{exams.examsList}" var="p">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{p.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{message.name}</f:facet>
+                        <h:outputText value="#{p.name}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{message.starting_time}</f:facet>
+                        <h:outputText value="#{p.starting_time}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{message.duration_in_hours}</f:facet>
+                        <h:outputText value="#{p.duration_hours}"/>
+                    </h:column>
+                </h:dataTable>
+            <br/>
+            <br/>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

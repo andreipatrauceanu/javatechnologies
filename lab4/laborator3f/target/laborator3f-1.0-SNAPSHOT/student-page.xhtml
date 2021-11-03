@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>#{message.title_student}</title>
+</h:head>
+    <h:body>
+        <ui:composition template = "WEB-INF/decorators/dataEdit.xhtml">
+            <ui:define name = "dataEditContent">
+                <br/>
+                <br/>
+                <h:outputLabel value="#{message.name}"/>
+                <br/>
+                <br/>
+                <input type="text" jsf:value="#{student.name}"/>
+                <br/>
+                <br/>
+                <h:outputLabel value="#{message.comma_exam}"/>
+                <br/>
+                <br/>
+                <input type="text" jsf:value="#{student.exams}"/>
+                <br/>
+                <br/>
+                <h:commandButton value="Insert" action="#{student.add}"/>
+                <br/>
+                <br/>
+                <h:outputText value="#{student.result}"/>
+                <br/>
+                <br/>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

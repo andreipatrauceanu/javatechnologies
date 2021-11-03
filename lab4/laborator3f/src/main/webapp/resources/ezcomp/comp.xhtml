@@ -1,0 +1,41 @@
+<ui:component xmlns=""
+              xmlns:ui="http://java.sun.com/jsf/facelets"
+              xmlns:composite="http://java.sun.com/jsf/composite"
+              xmlns:p="http://primefaces.org/ui"
+              xmlns:h="http://java.sun.com/jsf/html"
+              xmlns:jsf="http://xmlns.jcp.org/jsf"
+              xmlns:ez="http://java.sun.com/jsf/composite/ezcomp">
+  <composite:interface>
+    <composite:attribute name="exam_name"/>
+    <composite:attribute name="exam_start_time"/>
+    <composite:attribute name="exam_duration_hours"/>
+    <composite:attribute name="exam_result"/>
+  </composite:interface>
+  <composite:implementation>
+    <h:outputLabel value="#{message.name}"/>
+    <br/>
+    <br/>
+    <p:autoComplete type="text" value="#{cc.attrs.exam_name}" completeMethod="#{exam.get_courses()}"/>
+    <br/>
+    <br/>
+    <h:outputLabel value="#{message.starting_time}"/>
+    <br/>
+    <br/>
+    <input type="number" min="8" max="18" jsf:value="#{cc.attrs.exam_start_time}"/>
+    <br/>
+    <br/>
+    <h:outputLabel value="#{message.duration_in_hours}"/>
+    <br/>
+    <br/>
+    <input type="number" min="1" max="4" jsf:value="#{cc.attrs.exam_duration_hours}"/>
+    <br/>
+    <br/>
+    <h:commandButton value="Insert" action="#{exam.add}"/>
+    <br/>
+    <br/>
+    <h:outputText value="#{cc.attrs.exam_result}"/>
+    <br/>
+    <br/>
+  </composite:implementation>
+</ui:component>
+

@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ezcomp="http://java.sun.com/jsf/composite/ezcomp"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:loadBundle basename="Messages" var="message"/>
+<h:head>
+    <title>#{message.title_course}</title>
+</h:head>
+<h:body>
+    <ui:composition template = "WEB-INF/decorators/dataEdit.xhtml">
+        <ui:define name = "dataEditContent">
+            <ezcomp:comp
+                    exam_name ="#{exam.name}"
+                    exam_start_time="#{exam.starting_time}"
+                    exam_duration_hours="#{exam.duration_hours}"
+                    exam_result="#{exam.result}"
+            />
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:loadBundle basename="Messages" var="message"/>
+<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+  <h:head>
+    <title> Welcome page </title>
+  </h:head>
+  <h:body>
+    <p:layout fullPage="true" >
+      <!-- header -->
+      <p:layoutUnit position="north">
+        <ui:insert name="header">
+          <ui:include src="/WEB-INF/decorators/header.xhtml" />
+          <ui:include src="/WEB-INF/decorators/menuBar.xhtml"/>
+        </ui:insert>
+      </p:layoutUnit>
+      <!-- center -->
+      <p:layoutUnit position="center">
+        <ui:insert name="content">
+          <br/>
+          <br/>
+          Welcome to my homework! Please select an option from the menu above.
+        </ui:insert>
+      </p:layoutUnit>
+      <!-- footer -->
+      <p:layoutUnit position="south">
+        <ui:insert name="footer">
+          <ui:include src="/WEB-INF/decorators/footer.xhtml" />
+        </ui:insert>
+      </p:layoutUnit>
+    </p:layout>
+  </h:body>
+</f:view>
+</html>
