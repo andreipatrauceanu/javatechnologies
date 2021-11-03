@@ -21,3 +21,7 @@ Repository-ul pentru Tehnologii Java, **Patrauceanu Ionut-Andrei**, MISS1
 
 * Am reusit sa realizez primul exercitiu din cadrul laboratorului.
 
+### Laboratorul 4
+
+* Am reusit sa realizez primele 3 exercitii din cadrul laboratorului.
+
