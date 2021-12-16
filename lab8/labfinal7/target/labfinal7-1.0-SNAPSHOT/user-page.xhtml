@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+</h:head>
+<h:body>
+        <h:form>
+            <p:menubar>
+                <p:submenu label="Periods" rendered="#{authentication.currentUser.role eq 'admin'}">
+                    <p:menuitem value="Add period" outcome="period-page"/>
+                </p:submenu>
+
+                <p:submenu label="Documents">
+                    <p:menuitem value="Add" outcome="document-page"/>
+                    <p:menuitem value="View" outcome="view-page" rendered="#{authentication.currentUser.role eq 'admin'}"/>
+                </p:submenu>
+
+                <f:facet name="options">
+                    <p:commandButton value="Logout" action="#{authentication.logout()}"/>
+                </f:facet>
+            </p:menubar>
+        </h:form>
+</h:body>
+</html>
