@@ -28,3 +28,8 @@ Repository-ul pentru Tehnologii Java, **Patrauceanu Ionut-Andrei**, MISS1
 ### Laboratorul 7
 
 * Am reusit sa realizez primul exercitiu si o mare parte din cel de-al doilea.
+
+### Laboratorul 9
+
+* In ciuda multiplelor incercari, nu am reusit sa configurez un JDBC Realm, in schimb pentru a putea realiza exercitiul am folosit un FileSystem Realm in WildFly Elytron. Am securizat doua servicii rest.
+* Am realizat un microserviciu si unul care sa il invoce pe cel realizat anterior.
