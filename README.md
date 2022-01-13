@@ -33,3 +33,12 @@ Repository-ul pentru Tehnologii Java, **Patrauceanu Ionut-Andrei**, MISS1
 
 * In ciuda multiplelor incercari, nu am reusit sa configurez un JDBC Realm, in schimb pentru a putea realiza exercitiul am folosit un FileSystem Realm in WildFly Elytron. Am securizat doua servicii rest.
 * Am realizat un microserviciu si unul care sa il invoce pe cel realizat anterior.
+
+### Laboratorul 10 
+![lab_10_docker](https://user-images.githubusercontent.com/53914632/149287823-9fe172b2-b97b-41ea-a5dd-fed1733f0aaa.PNG)
+Am reusit sa rulez un microservciu cu ajutorul docker.
+![image](https://user-images.githubusercontent.com/53914632/149289021-49d04147-8bc2-4e8a-9163-1bf8ada16d1e.png)
+![image](https://user-images.githubusercontent.com/53914632/149289097-1813ff7a-6d69-4965-b941-5c43b4cc2792.png)
+
+Am reusit sa adaug health check procedure si am adaugat metrics pentru a vedea comportamentul serviciului. 
+
